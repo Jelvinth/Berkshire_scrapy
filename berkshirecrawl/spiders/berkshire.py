@@ -16,11 +16,6 @@ class berkspider(scrapy.Spider):
                 "name": profiles.css('span.agent-name a::text').get(),  
             }
 
-        #next_page = response.css('a.page-link').attrib['href']
-        #last_page = response.css('span.page-link')
-        #if next_page is not last_page:
-         #   yield response.follow(next_page, callback=self.parse)
-
         next_page = 'https://www.bhhsamb.com/agents?page=' +str(berkspider.page_no)
         if berkspider.page_no <= 44:
             berkspider.page_no += 1
