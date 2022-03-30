@@ -44,15 +44,3 @@ class berkspiders(scrapy.Spider):
                 "languages" : response.css('ul.first::text').getall(),
                 "description" :  ''.join(response.css('div.col-sm-24 >p::text').getall()).replace("\xa0"," "),
             }
-        # except:
-        #     yield {
-        #         "name" : response.css('h1.body-title::text').get(),
-        #         "job_title" : response.css('').get(),
-        #         "image_url" : response.css('').get(),
-        #         "address" : response.css('').get(),
-        #         "contact_details" : response.css('').get(),
-        #         "social_accounts" : response.css('').get(),
-        #         "offices" : response.css('').get(),
-        #         "languages" : response.css('').get(),
-        #         "description" : response.css('').get(),
-        #     }
